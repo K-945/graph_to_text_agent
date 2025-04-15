@@ -424,7 +424,7 @@ def check_and_create_folder(folder_path):
         print(f'Folder {folder_path} already exists.')
 
 def init_database(splited_file):
-    embeddings = HuggingFaceEmbeddings(model_name='')
+    embeddings = HuggingFaceEmbeddings(model_name='mixedbread-aimxbai-embed-large-v1')
     database = FAISS.from_documents(splited_file, embedding=embeddings)
     return database
 
