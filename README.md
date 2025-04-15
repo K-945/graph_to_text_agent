@@ -5,3 +5,5 @@
 `TGAgent` is a program that reads data build graphs and reads them.
 
 `paperqa.jsonl` is the test data.
+
+`chatgpt_api.py` is an interface program that requests GPT.
