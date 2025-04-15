@@ -104,9 +104,9 @@ def write_xlsx(excel_file_path, g):
         ws1.cell(row=row, column=3, value=vertex.summary)
         ws1.cell(row=row, column=4, value=json.dumps(vertex.adjacency))
         for to_vertex_id, weight in vertex.adjacency.items():
-            ws2.cell(row=row, column=1, value=vertex.id)        # 起点
-            ws2.cell(row=row, column=2, value=to_vertex_id)     # 终点
-            ws2.cell(row=row, column=3, value=weight)           # 边
+            ws2.cell(row=row, column=1, value=vertex.id)
+            ws2.cell(row=row, column=2, value=to_vertex_id)
+            ws2.cell(row=row, column=3, value=weight)
         row += 1
     wb.save(excel_file_path)
 
@@ -212,7 +212,7 @@ def construct_summary(splited_file, summary_file_path, excel_file_path, g):
                     continue
         else:
             summary = text
-        summary = summary.replace("\n", "").replace("\t", "").replace("\r", "").replace("\u2212", "").replace("\u1fb1", '').replace("\u2113", "").replace('\u27e8', '').replace('\u27e9', '').replace('\xa3', '')
+        summary = summary.replace("\n", "").replace("\t", "").replace("\r", "")
         summary = summary.strip()
         print(summary)
         chunk_summary = f'The {id + 1}th paragraph：' + summary + '\n'
